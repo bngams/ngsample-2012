@@ -7,7 +7,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  param: string;
+  param: string | null = '';
 
   // DI
   // <portee> nom de l'attribut <Type>

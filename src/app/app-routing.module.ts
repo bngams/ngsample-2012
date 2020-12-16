@@ -11,6 +11,13 @@ const routes: Routes = [
   { path: 'home/:param', component: HomeComponent },
   { path: ':param/home', component: HomeComponent },
   { path: 'get-started', component: GetStartedComponent },
+  // {
+  //   path: 'stock', children: [
+  //     // /stock/dashboard
+  //     { path: 'dashboard', component: DashboardComponent }
+  //   ]
+  // },
+  { path: 'stock', loadChildren: () => import('./modules/stock/stock.module').then(m => m.StockModule) },
   // at the end
   { path: '**', component: NotFoundComponent },
 ];

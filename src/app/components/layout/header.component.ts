@@ -15,7 +15,7 @@ const PRIVATE_CONST = 'private';
       <ul>
         <li class="menu-item" routerLink="/home" routerLinkActive="active">Home</li>
         <li class="menu-item" routerLink="/get-started" routerLinkActive="active">Get Started</li>
-        <li class="menu-item">Features</li>
+        <li class="menu-item" routerLink="/stock/dashboard" routerLinkActive="active">Features</li>
       </ul>
     </mat-toolbar>
   `,
