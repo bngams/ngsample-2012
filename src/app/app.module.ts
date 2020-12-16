@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/layout/header.component';
 import { GetStartedComponent } from './components/get-started/get-started.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ThemeModule } from './modules/theme/theme.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { GetStartedComponent } from './components/get-started/get-started.compon
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    ThemeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -9,12 +9,28 @@ const PRIVATE_CONST = 'private';
 @Component({
   selector: 'app-header',
   template: `
-    <p>
-      header works!
-    </p>
+  <!-- color="primary" <=> [color]="angular expression" -->
+    <mat-toolbar [color]="'primary'">
+      <span>My Application</span>
+      <ul>
+        <li class="menu-item">Home</li>
+        <li class="menu-item">Get Started</li>
+        <li class="menu-item">Features</li>
+      </ul>
+    </mat-toolbar>
   `,
-  styles: [
-  ]
+  styles: [`
+    mat-toolbar {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .menu-item {
+      list-style-type: none;
+      display: inline-block;
+      margin: 15px;
+    }
+  `]
 })
 export class HeaderComponent implements OnInit {
   // const CLASS_CONST = 'test';

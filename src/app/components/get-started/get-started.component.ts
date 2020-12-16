@@ -10,6 +10,12 @@ export class GetStartedComponent implements OnInit {
   @Input()
   title = ''; // main goal: get value from other component
 
+  @Input()
+  subtitle = '';
+
+  @Input()
+  objectTitle: any;
+
   @Output()
   myCustomEvent = new EventEmitter<string>(); // create an event
 

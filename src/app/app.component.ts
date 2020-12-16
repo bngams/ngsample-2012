@@ -8,6 +8,11 @@ import { Component } from '@angular/core';
 export class AppComponent {
   appTitle = 'sample-ngapp';
 
+  someObject = {
+    title: 'xxx',
+    subtitle: 'yyy'
+  };
+
   handleEvent(value: string): void {
     console.log('event called');
   }
