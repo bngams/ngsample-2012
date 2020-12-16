@@ -13,8 +13,8 @@ const PRIVATE_CONST = 'private';
     <mat-toolbar [color]="'primary'">
       <span>My Application</span>
       <ul>
-        <li class="menu-item">Home</li>
-        <li class="menu-item">Get Started</li>
+        <li class="menu-item" routerLink="/home" routerLinkActive="active">Home</li>
+        <li class="menu-item" routerLink="/get-started" routerLinkActive="active">Get Started</li>
         <li class="menu-item">Features</li>
       </ul>
     </mat-toolbar>
@@ -29,6 +29,14 @@ const PRIVATE_CONST = 'private';
       list-style-type: none;
       display: inline-block;
       margin: 15px;
+    }
+
+    .menu-item:hover {
+      font-weight: bolder;
+    }
+
+    .active {
+      text-decoration: underline;
     }
   `]
 })
