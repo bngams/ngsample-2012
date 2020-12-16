@@ -6,15 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'sample-ngapp';
-  imgUrl = 'https://via.placeholder.com/150';
-  isDisabled = true;
-  logoColor = 'blue';
-  today = new Date();
-  classes = { first: this.isDisabled, second: this.isDisabled, third: !this.isDisabled };
-  fruits: string[] = ['banana', 'apple', 'cherry'];
+  appTitle = 'sample-ngapp';
 
-  toggleButton(): void {
-    this.isDisabled = !this.isDisabled;
+  handleEvent(value: string): void {
+    console.log('event called');
   }
 }
