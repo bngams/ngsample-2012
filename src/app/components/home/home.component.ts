@@ -7,6 +7,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  param: string;
 
   // DI
   // <portee> nom de l'attribut <Type>
@@ -16,8 +17,8 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     // this.route.paramMap.get().subscribe...
-    const param = this.route.snapshot.paramMap.get('param');
-    console.log('use home param', param);
+    this.param = this.route.snapshot.paramMap.get('param');
+    console.log('use home param', this.param);
   }
 
 }

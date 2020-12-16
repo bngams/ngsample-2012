@@ -1,1 +1,8 @@
 <p>home works!</p>
+<p>{{ param ? 'fist text' : 'second text' }}</p>
+<p *ngIf="param else otherTemplate">
+    First text
+</p>
+<ng-template #otherTemplate>
+    second text
+</ng-template>
