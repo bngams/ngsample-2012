@@ -1,19 +1,19 @@
 import { Component, Input, OnInit, ValueProvider, ɵpublishDefaultGlobalUtils } from '@angular/core';
 import { Product } from '../../models/product';
 import { PRODUCTS } from '../../mocks/products.mock';
-import { HttpClient } from '@angular/common/http';
+import { ProductService } from '../../services/product.service';
 import { Observable, of } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.scss']
+  styleUrls: ['./product-list.component.scss'],
 })
 export class ProductListComponent implements OnInit {
   products: Product[] = new Array();
 
-  constructor(private http: HttpClient) { }
+  constructor(private productService: ProductService) { }
 
   // Initialization
   ngOnInit(): void {
@@ -27,9 +27,7 @@ export class ProductListComponent implements OnInit {
   }
 
   loadProductsviaAPI(): void {
-    let request: Observable<Product[]>;
-    request = this.http.get<Product[]>('http://localhost:3304/products');
-    request.subscribe(res => this.products = res);
+    this.productService.getProducts().subscribe(res => this.products = res);
   }
 
   testObservable(): void {
