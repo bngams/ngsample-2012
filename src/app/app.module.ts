@@ -6,9 +6,10 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/layout/header.component';
 import { GetStartedComponent } from './components/get-started/get-started.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ThemeModule } from './modules/theme/theme.module';
+import { SharedModule } from './modules/shared/shared.module';
 import { HomeComponent } from './components/home/home.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { ProductModule } from './modules/product/product.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    ThemeModule,
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

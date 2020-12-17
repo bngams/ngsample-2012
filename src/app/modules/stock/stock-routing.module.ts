@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   // /stock/dashboard (/stock => loadChildren)
   { path: 'dashboard', component: DashboardComponent }
 ];

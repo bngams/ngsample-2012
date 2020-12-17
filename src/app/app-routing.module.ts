@@ -11,6 +11,7 @@ const routes: Routes = [
   { path: 'home/:param', component: HomeComponent },
   { path: ':param/home', component: HomeComponent },
   { path: 'get-started', component: GetStartedComponent },
+  // without lazy loading
   // {
   //   path: 'stock', children: [
   //     // /stock/dashboard
@@ -18,6 +19,9 @@ const routes: Routes = [
   //   ]
   // },
   { path: 'stock', loadChildren: () => import('./modules/stock/stock.module').then(m => m.StockModule) },
+  // old syntax
+  // { path: 'product', loadChildren: './modules/product/product.module#ProductModule' }, // NgModuleFactory
+  { path: 'product', loadChildren: () => import('./modules/product/product.module').then(m => m.ProductModule) },
   // at the end
   { path: '**', component: NotFoundComponent },
 ];
