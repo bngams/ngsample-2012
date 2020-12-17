@@ -18,6 +18,7 @@ const MATERIAL_MODULES = [
 ];
 
 @NgModule({
+  // give access
   exports: [
     MATERIAL_MODULES
   ]

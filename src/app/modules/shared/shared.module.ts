@@ -5,7 +5,7 @@ import { ThemeModule } from './theme.module';
 
 @NgModule({
   exports: [
-    ThemeModule
+    ThemeModule,
   ]
 })
 export class SharedModule { }
