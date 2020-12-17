@@ -10,7 +10,7 @@ export class ProductCardComponent implements OnInit {
 
   // property binding [product]
   @Input()
-  product: Product;
+  product: Product = {} as Product; // new Product() <= impossible car interface
 
   constructor() { }
 
