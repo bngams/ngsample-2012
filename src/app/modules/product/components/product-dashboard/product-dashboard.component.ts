@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { Product } from '../../models/product';
 import { ProductListComponent } from '../product-list/product-list.component';
 
@@ -7,7 +7,7 @@ import { ProductListComponent } from '../product-list/product-list.component';
   templateUrl: './product-dashboard.component.html',
   styleUrls: ['./product-dashboard.component.scss']
 })
-export class ProductDashboardComponent implements OnInit {
+export class ProductDashboardComponent implements OnInit, AfterViewInit {
 
   @ViewChild(ProductListComponent)
   productListComponent: ProductListComponent;
@@ -15,6 +15,10 @@ export class ProductDashboardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  ngAfterViewInit(): void {
+    console.log('viewchild loaded',  this.productListComponent);
   }
 
   addProduct(p: Product): void {
