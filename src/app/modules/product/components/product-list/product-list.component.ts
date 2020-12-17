@@ -1,8 +1,9 @@
-import { Component, Input, OnInit, ValueProvider } from '@angular/core';
+import { Component, Input, OnInit, ValueProvider, ɵpublishDefaultGlobalUtils } from '@angular/core';
 import { Product } from '../../models/product';
 import { PRODUCTS } from '../../mocks/products.mock';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import { filter, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-product-list',
@@ -16,7 +17,7 @@ export class ProductListComponent implements OnInit {
 
   // Initialization
   ngOnInit(): void {
-    this.testObservable();
+    // this.testObservable();
     this.loadProductsviaAPI();
   }
 
@@ -28,12 +29,13 @@ export class ProductListComponent implements OnInit {
   loadProductsviaAPI(): void {
     let request: Observable<Product[]>;
     request = this.http.get<Product[]>('http://localhost:3304/products');
+    request.subscribe(res => this.products = res);
   }
 
   testObservable(): void {
     // objet qui englobe un traaitment (async)
     // renvoi des données, grace à un subscriber
-    const observable = new Observable(subscriber => {
+    const observable = new Observable<number>(subscriber => {
       subscriber.next(1);
       subscriber.next(2);
       subscriber.next(3);
@@ -66,6 +68,12 @@ export class ProductListComponent implements OnInit {
       (result) => console.log('next', result),
       (err) => console.log('err', err)
     );
+
+    const otherObservable = of(1, 2, 3);
+    otherObservable.pipe(
+      map(x => x * 2), // 1 * 2, 2 * 2, 3 * 2
+      filter(x => x > 3) // 2 > 3 ? false, 4 > 3 ? true, 6 > 3 ? true
+    ).subscribe((result) => console.log('result', result));
 
   }
 
