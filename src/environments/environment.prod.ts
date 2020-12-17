@@ -1,6 +1,4 @@
 export const environment = {
   production: true,
-  api: {
-    url: 'http://monapi.com:8080'
-  }
+  apiUrl: 'http://monapi.com:3304'
 };

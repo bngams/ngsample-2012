@@ -12,6 +12,7 @@ import { filter, map } from 'rxjs/operators';
 })
 export class ProductListComponent implements OnInit {
   products: Product[] = new Array();
+  products$: Observable<Product[]>;
 
   constructor(private productService: ProductService) { }
 
@@ -28,6 +29,7 @@ export class ProductListComponent implements OnInit {
 
   loadProductsviaAPI(): void {
     this.productService.getProducts().subscribe(res => this.products = res);
+    this.products$ = this.productService.getProducts();
   }
 
   testObservable(): void {
